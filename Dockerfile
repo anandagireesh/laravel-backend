@@ -18,6 +18,9 @@ WORKDIR /var/www
 # Copy application code
 COPY . .
 
+# Copy .env.example to .env
+RUN cp .env.example .env
+
 # Install dependencies (for development, include dev dependencies)
 RUN composer install --optimize-autoloader --no-interaction
 
